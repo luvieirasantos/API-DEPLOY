@@ -7,7 +7,10 @@ WORKDIR /app
 # Copiar o projeto inteiro para dentro da imagem
 COPY . .
 
-# Construir o projeto (gera o jar)
+# Garante permissão de execução do Maven Wrapper
+RUN chmod +x ./mvnw
+
+# Compila o projeto
 RUN ./mvnw clean package -DskipTests
 
 # Executar a aplicação
