@@ -4,6 +4,6 @@ package com.conexaosolidaria.api_perfil.controller;
 public class HomeController {
     @GetMapping("/")
     public String home() {
-        return "API online! Veja /swagger-ui para documentação.";
+        return "API online! Veja /swagger-ui/index.html para documentação.";
     }
 }
