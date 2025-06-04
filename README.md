@@ -97,7 +97,7 @@ Acesse: http://localhost:8080/swagger-ui/index.html#/
 
 ## ☁️ Deploy em nuvem
 Projeto já publicado no Render:
-https://api-deploy-1-0xst.onrender.com
+`https://api-deploy-1-0xst.onrender.com`
 
 Se quiser deployar em outro serviço (Railway, Heroku, AWS, Azure), basta clonar o projeto e seguir o padrão Spring Boot.
 
@@ -109,15 +109,43 @@ Caso encontre erro 500 nos endpoints, pode ser limitação de conexões do banco
 ## 👨‍🏫 Atende aos requisitos acadêmicos:
 API RESTful
 
-- Persistência em banco relacional (Spring Data JPA)
+## Persistência em banco relacional (Spring Data JPA)
 
-- Relacionamento entre entidades
+## 🏗️ Arquitetura e Boas Práticas
 
-- Validações com Bean Validation
+O projeto segue as boas práticas recomendadas para API RESTful:
 
-- Documentação Swagger
+* **Camadas separadas**: `controller`, `service`, `repository`, `model`
+* **Uso de Spring Data JPA** para persistência
+* **Validações automáticas** com Bean Validation
+* **Tratamento centralizado de exceções**
+* **Swagger/OpenAPI** para documentação automática
+* **Spring Security** para proteção dos endpoints
 
-- Deploy público em nuvem
+---
+
+## 🔗 Relacionamento entre entidades
+
+* Um `Perfil` pode ter **vários** `ContatoEmergencia` (`@OneToMany`).
+* O relacionamento é persistido e navegado via endpoints REST.
+
+---
+
+## ✅ Validações com Bean Validation
+
+* Todos os campos essenciais são validados automaticamente.
+* Exemplo: nome, telefone e senha não podem ser vazios (`@NotBlank`).
+* Respostas de erro são amigáveis e informativas.
+
+---
+
+## Documentação da API com Swagger
+Acesse:
+`https://api-deploy-1-0xst.onrender.com/swagger-ui/index.html`
+
+Você pode testar todos os endpoints, visualizar schemas direto pela interface!
+
+---
 
   
 
